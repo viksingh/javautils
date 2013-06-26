@@ -6,9 +6,9 @@ import java.util.List;
 
 public class ParameterizedIterator {
 
-  public static void main(String[] args){
+	public static void main(String[] args) {
 
-		List<String> listOfStrings  = new LinkedList<String>();	
+		List<String> listOfStrings = new LinkedList<String>();
 		listOfStrings.add("Vikas ");
 		listOfStrings.add("Singh. ");
 		listOfStrings.add("Wake ");
@@ -16,13 +16,42 @@ public class ParameterizedIterator {
 		listOfStrings.add("From  ");
 		listOfStrings.add("Sleep ");
 
-		//Demonstrate parameterizing iterators
-		//Iterator needs to be casted as well to the generic type to work		
+		// Demonstrate parameterizing iterators
+		// Iterator needs to be casted as well to the generic type to work
 
-		for(Iterator<String> i = listOfStrings.iterator();i.hasNext();){
+		for (Iterator<String> i = listOfStrings.iterator(); i.hasNext();) {
 			String s = i.next();
 			System.out.print(s);
+		}
+
+		// Let's add some bug in this code
+		// This is still OK
+		List<String> newString = new LinkedList();
+		newString.add("HELLO");
+		newString.add("WORLD");
+		for (Iterator<String> j = newString.iterator(); j.hasNext();) {
+			System.out.print(j.next());
+		}
+
+		// Let's create a casting exception
+		List list2 = getList();
+
+		for (Iterator<String> k = list2.iterator(); k.hasNext();) {
+
+			System.out.print(k.next());
 
 		}
+
 	}
+
+	private static List getList() {
+		List list = new LinkedList();
+
+		list.add("Hello");
+		list.add(2);
+		list.add("World");
+
+		return list;
+	}
+
 }
