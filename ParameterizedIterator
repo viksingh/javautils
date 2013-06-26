@@ -1,0 +1,28 @@
+package examples;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class ParameterizedIterator {
+
+  public static void main(String[] args){
+
+		List<String> listOfStrings  = new LinkedList<String>();	
+		listOfStrings.add("Vikas ");
+		listOfStrings.add("Singh. ");
+		listOfStrings.add("Wake ");
+		listOfStrings.add("Up ");
+		listOfStrings.add("From  ");
+		listOfStrings.add("Sleep ");
+
+		//Demonstrate parameterizing iterators
+		//Iterator needs to be casted as well to the generic type to work		
+
+		for(Iterator<String> i = listOfStrings.iterator();i.hasNext();){
+			String s = i.next();
+			System.out.print(s);
+
+		}
+	}
+}
