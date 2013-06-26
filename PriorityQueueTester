@@ -1,0 +1,47 @@
+//This program hellps to understand PriorityQueues and comparator
+
+package examples;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+
+public class PriorityQueueTester {
+
+  public static void main(String[] args) {
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(20,
+				new Comparator<Integer>() {
+
+			
+			
+				public int compare(Integer i, Integer j){
+
+/*					Understanding comparator,
+					if i<j in defined sorting order, return -1
+						i>j, return 1
+*/					
+					
+					Integer y,z;
+				
+					y = i%2;
+					z = j%2;
+					
+				int result = y - z;
+				if (result == 0)
+					result = i-j;
+				return result;
+			}
+		}
+				);
+
+		for (int i = 0;i < 20; i++){
+			pq.offer(20-i);
+		}
+
+		for (int i = 0;i < 20; i++){
+			System.out.println(pq.poll( ));
+		}
+	}
+
+
+}
