@@ -1,0 +1,52 @@
+package examples;
+
+//Using inline ENUMs
+
+public class StudentwithInlineEnums {
+
+  public enum GradeInLine  { A, B, C, D, E, F, Incomplete };	
+	private String firstName;
+	private String lastName;
+	private GradeInLine grade;
+	
+	public StudentwithInlineEnums(String firstName, String lastName){
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public GradeInLine getGrade() {
+		return grade;
+	}
+	public void setGrade(GradeInLine grade) {
+		this.grade = grade;
+	}
+
+	public String getFullName(){
+		return new StringBuffer(firstName).append(" ").append(lastName).toString();
+	}
+	
+public static void main(String[] args){
+	
+	StudentwithInlineEnums student1 = new StudentwithInlineEnums("Vikas","Singh");
+	StudentwithInlineEnums student2 = new StudentwithInlineEnums("Avinash","Singh");
+	
+	student1.setGrade(GradeInLine.A);
+	student2.setGrade(GradeInLine.Incomplete);
+	
+}
+	
+}
+
