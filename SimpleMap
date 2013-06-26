@@ -1,0 +1,24 @@
+package examples;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class SimpleMap {
+
+  public static void main(String[] args) {
+
+// Maps are like dictionaries in Objective C
+		Map<Integer, Integer> squares = new HashMap<Integer, Integer>();
+
+		for (int i = 0; i < 100; i++) {
+			squares.put(i, i * i);
+		}
+
+		for (int i = 0; i < 10; i++) {
+			int n = i * 3;
+			System.out.println("The square of " + n + " is " + squares.get(n));
+		}
+
+	}
+
+}
