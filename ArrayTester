@@ -1,0 +1,100 @@
+package examples;
+
+// Helps to understand all the nice functions added for Arrays in Java 5
+
+import java.util.Arrays;
+import java.util.List;
+
+public class ArrayTester {
+
+  private int[] arr;
+
+	public ArrayTester(int numvalues) {
+		arr = new int[numvalues];
+		for (int i = 0; i < numvalues; i++) {
+			arr[i] = i;
+		}
+	}
+
+	public int[] get() {
+		return arr;
+	}
+
+	public static void main(String[] args) {
+		ArrayTester tester = new ArrayTester(50);
+		int[] myArray = tester.get();
+		int[] myOther = tester.get().clone();
+
+		if (Arrays.equals(myArray, myOther)) {
+			System.out.println("The two arrays are equal");
+		} else {
+			System.out.println("The two arrays are NOT equal");
+
+		}
+
+		//Fill up some values		
+
+		Arrays.fill(myOther, 1,2,3);
+		myArray[30] = 98;
+
+		// Print Array, as it is
+		System.out.println("Here's the unsorted Array");		
+		System.out.println(Arrays.toString(myArray));
+		System.out.println();
+
+
+		Arrays.sort(myArray);
+
+		// Print sorted Array
+		System.out.println("Here's the sorted Array");		
+		System.out.println(Arrays.toString(myArray));
+		System.out.println();
+
+
+		int index = Arrays.binarySearch(myArray, 98);
+		System.out.println("98 is located at "+ index);
+
+
+		String[][] tictactoe = {
+				{"X","O","O"},
+				{"O","X","X"},
+				{"X","O","X"},
+		};
+
+		System.out.println(Arrays.deepToString(tictactoe));
+
+		String[][] tictactoe2 = {
+				{"X","O","X"},
+				{"O","X","X"},
+				{"X","O","X"},
+		};
+
+
+		String[][] tictactoe3 = {
+				{"X","O","O"},
+				{"O","X","X"},
+				{"X","O","X"},
+		};
+
+		if(Arrays.deepEquals(tictactoe, tictactoe2)){
+			System.out.println("Boards 1 and 2 are equal");
+													}
+		else{
+			System.out.println("Boards 1 and 2 are not equal");		
+			}
+
+		
+		if(Arrays.deepEquals(tictactoe, tictactoe3)){
+			System.out.println("Boards 1 and 3 are equal");
+													}
+		else{
+			System.out.println("Boards 1 and 3 are not equal");		
+			}
+		
+		
+		int hashcode = Arrays.deepHashCode(tictactoe);
+		System.out.println("Hash Code value is"+hashcode);	
+	}
+	
+
+}
