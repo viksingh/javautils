@@ -1,0 +1,20 @@
+package examples;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class SimpleGenericWithSTring {
+  
+	public static void main(String[] args){
+		
+		List<String> listOfStrings = new LinkedList<String>();
+		listOfStrings.add("Vikas");
+		listOfStrings.add("Singh");		
+
+		//The below however is not allowed
+//		listOfStrings.add(29);		
+		
+		
+	}
+
+}
