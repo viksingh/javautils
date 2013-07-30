@@ -1,0 +1,15 @@
+  		XPathFactory factory = XPathFactory.newInstance();
+			XPath xpath = factory.newXPath();
+			
+			
+
+			try {
+				XPathExpression expr = xpath.compile("/Element1/Element2");
+				Object result = expr.evaluate(sourceDoc, XPathConstants.NODESET);
+				
+				NodeList nodes = (NodeList) result;
+
+			
+			} catch (XPathExpressionException e) {
+				e.printStackTrace();
+			}
